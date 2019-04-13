@@ -40,7 +40,7 @@ def get_mysql_connection():
 
 
 def insert(db, table_name, content):
-    # 使用 cursor() 方法创建一个游标对象 cursor
+   
     cursor = db.cursor()
 
     sql = "insert into " + table_name + "(content) " + "values(\"" + content + "\")"
