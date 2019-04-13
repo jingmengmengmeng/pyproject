@@ -41,7 +41,6 @@ def get_mysql_connection():
 
 def insert(db, table_name, content):
     cursor = db.cursor()
-
     sql = "insert into " + table_name + "(content) " + "values(\"" + content + "\")"
     print(sql)
     cursor.execute(sql)
