@@ -45,6 +45,7 @@ def insert(db, table_name, content):
 
     sql = "insert into " + table_name + "(content) " + "values(\"" + content + "\")"
     print(sql)
+    
     cursor.execute(sql)
     db.commit()
 
