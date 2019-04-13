@@ -46,8 +46,6 @@ def insert(db, table_name, content):
     cursor.execute(sql)
     db.commit()
 
-    pass
-
 
 def write_files(contents):
     path = "d:\poems"
