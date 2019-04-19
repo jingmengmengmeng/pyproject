@@ -41,9 +41,6 @@ def insert(db, table_name, bookname, author_name):
     db.commit()
 
 
-
-
-
 def write_files(book_list):
     path = "d:\\books"
     create_dir(path)
@@ -51,7 +48,6 @@ def write_files(book_list):
         file_name = path + "\\book_" + str(i+1) + ".txt"
         write_file(file_name, book_list[i]["bookname"])
         write_file(file_name, book_list[i]["author_name"])
-
 
 
 def create_dir(path):
@@ -65,9 +61,27 @@ def write_file(file_name, content):
     f.close()
 
 
+def read_files(dir):
+    files = os.listdir(dir) #列举一个目录下所有文件名称，得到一个数组['poem_1.txt', 'poem_2.txt', 'poem_3.txt']
+    poems = []
+    for file in files:
+        file_name = dir + '\\' + file #遍历文件列表，和父级目录拼接在一起，形成完整的文件名 d:\poems + \ + poem_1.txt
+        poem = read_file(file_name)
+        poems.append(poem)
+    return poems
+
+
+def read_file(file_name):
+    f = open(file_name, "r+", encoding='utf-8') #以读方式打开文件
+    poem = f.readline()#从文件中读取一行，返回该行内容
+    return poem
+
+
+
 if __name__ == "__main__":
-    book_list = get_book(4)
+    book_list = read_files()
     write_mysql(book_list)
-    print(book_list)
+    print(read_files('d:\\books'))
+
 
 

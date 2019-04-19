@@ -1,5 +1,6 @@
 import urllib
 
+
 test_data = {'ServiceCode':'aaaa','b':'bbbbb'}
 test_data_urlencode = urllib.urlencode(test_data)
 requrl = "http://192.168.81.16/cgi-bin/python_test/test.py"
